@@ -2,7 +2,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class BottleOfWaterVendingMachine implements VendingMachine{
-    private List<Product> productList = new ArrayList<>();
+    protected List<Product> productList = new ArrayList<>();
     @Override
     public void initProduct(List<Product> productList) {
         this.productList = productList;

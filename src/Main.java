@@ -4,13 +4,17 @@ import java.util.List;
 public class Main {
     public static void main(String[] args) {
         List<Product> productList = new ArrayList<>();
-        productList.add(new BottleOFWater("qwe", 123, 100));
-        productList.add(new BottleOFWater("qwe", 200, 150));
-        productList.add(new BottleOFWater("zxcg", 500, 1000));
-        productList.add(new BottleOFWater("qaffwe", 123, 10));
-        BottleOfWaterVendingMachine vendingMachine = new BottleOfWaterVendingMachine();
+        productList.add(new HotDrink("Чай черный", 70, 300, 100));
+        productList.add(new HotDrink("Чай зеленый", 70, 300, 70));
+        productList.add(new HotDrink("Кофе каппучино", 120, 200, 90));
+        productList.add(new HotDrink("Кофе эспрессо", 150, 150, 90));
+        productList.add(new HotDrink("Горячий шоколад", 100, 150, 80));
+
+        HotDrinkVendingMachine vendingMachine = new HotDrinkVendingMachine();
         vendingMachine.initProduct(productList);
-        System.out.println(vendingMachine.getProduct("qwe", 150));
-        Product test = new BottleOFWater("asd", 123, 123);
+        System.out.println(vendingMachine.getProduct("Чай черный", 300, 100));
+        System.out.println(vendingMachine.getProduct("Кофе каппучино", 200, 90));
+        System.out.println(vendingMachine.getProduct("Кофе эспрессо", 150, 80)); // такого напитка нет
+        System.out.println(vendingMachine.getProduct("Очень горячий шоколад", 150, 80)); // такого напитка нет
     }
 }
